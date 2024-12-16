@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2024-12-16">
+    <creator>NetworkX 3.2.1</creator>
+  </meta>
+  <graph defaultedgetype="directed" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="size" type="long" />
+    </attributes>
+    <nodes>
+      <node id="embedding.weight" label="embedding.weight">
+        <attvalues>
+          <attvalue for="0" value="256000" />
+        </attvalues>
+      </node>
+      <node id="embedding.bias" label="embedding.bias">
+        <attvalues>
+          <attvalue for="0" value="256" />
+        </attvalues>
+      </node>
+      <node id="lstm.weight_ih_l0" label="lstm.weight_ih_l0">
+        <attvalues>
+          <attvalue for="0" value="262144" />
+        </attvalues>
+      </node>
+      <node id="lstm.weight_hh_l0" label="lstm.weight_hh_l0">
+        <attvalues>
+          <attvalue for="0" value="262144" />
+        </attvalues>
+      </node>
+      <node id="lstm.bias_ih_l0" label="lstm.bias_ih_l0">
+        <attvalues>
+          <attvalue for="0" value="1024" />
+        </attvalues>
+      </node>
+      <node id="lstm.bias_hh_l0" label="lstm.bias_hh_l0">
+        <attvalues>
+          <attvalue for="0" value="1024" />
+        </attvalues>
+      </node>
+      <node id="lstm.weight_ih_l1" label="lstm.weight_ih_l1">
+        <attvalues>
+          <attvalue for="0" value="262144" />
+        </attvalues>
+      </node>
+      <node id="lstm.weight_hh_l1" label="lstm.weight_hh_l1">
+        <attvalues>
+          <attvalue for="0" value="262144" />
+        </attvalues>
+      </node>
+      <node id="lstm.bias_ih_l1" label="lstm.bias_ih_l1">
+        <attvalues>
+          <attvalue for="0" value="1024" />
+        </attvalues>
+      </node>
+      <node id="lstm.bias_hh_l1" label="lstm.bias_hh_l1">
+        <attvalues>
+          <attvalue for="0" value="1024" />
+        </attvalues>
+      </node>
+      <node id="lstm.weight_ih_l2" label="lstm.weight_ih_l2">
+        <attvalues>
+          <attvalue for="0" value="262144" />
+        </attvalues>
+      </node>
+      <node id="lstm.weight_hh_l2" label="lstm.weight_hh_l2">
+        <attvalues>
+          <attvalue for="0" value="262144" />
+        </attvalues>
+      </node>
+      <node id="lstm.bias_ih_l2" label="lstm.bias_ih_l2">
+        <attvalues>
+          <attvalue for="0" value="1024" />
+        </attvalues>
+      </node>
+      <node id="lstm.bias_hh_l2" label="lstm.bias_hh_l2">
+        <attvalues>
+          <attvalue for="0" value="1024" />
+        </attvalues>
+      </node>
+      <node id="lstm.weight_ih_l3" label="lstm.weight_ih_l3">
+        <attvalues>
+          <attvalue for="0" value="262144" />
+        </attvalues>
+      </node>
+      <node id="lstm.weight_hh_l3" label="lstm.weight_hh_l3">
+        <attvalues>
+          <attvalue for="0" value="262144" />
+        </attvalues>
+      </node>
+      <node id="lstm.bias_ih_l3" label="lstm.bias_ih_l3">
+        <attvalues>
+          <attvalue for="0" value="1024" />
+        </attvalues>
+      </node>
+      <node id="lstm.bias_hh_l3" label="lstm.bias_hh_l3">
+        <attvalues>
+          <attvalue for="0" value="1024" />
+        </attvalues>
+      </node>
+      <node id="fc.0.weight" label="fc.0.weight">
+        <attvalues>
+          <attvalue for="0" value="32768" />
+        </attvalues>
+      </node>
+      <node id="fc.0.bias" label="fc.0.bias">
+        <attvalues>
+          <attvalue for="0" value="128" />
+        </attvalues>
+      </node>
+      <node id="fc.3.weight" label="fc.3.weight">
+        <attvalues>
+          <attvalue for="0" value="256" />
+        </attvalues>
+      </node>
+      <node id="fc.3.bias" label="fc.3.bias">
+        <attvalues>
+          <attvalue for="0" value="2" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="embedding.weight" target="embedding.bias" id="0" />
+      <edge source="embedding.bias" target="lstm.weight_ih_l0" id="1" />
+      <edge source="lstm.weight_ih_l0" target="lstm.weight_hh_l0" id="2" />
+      <edge source="lstm.weight_hh_l0" target="lstm.bias_ih_l0" id="3" />
+      <edge source="lstm.bias_ih_l0" target="lstm.bias_hh_l0" id="4" />
+      <edge source="lstm.bias_hh_l0" target="lstm.weight_ih_l1" id="5" />
+      <edge source="lstm.weight_ih_l1" target="lstm.weight_hh_l1" id="6" />
+      <edge source="lstm.weight_hh_l1" target="lstm.bias_ih_l1" id="7" />
+      <edge source="lstm.bias_ih_l1" target="lstm.bias_hh_l1" id="8" />
+      <edge source="lstm.bias_hh_l1" target="lstm.weight_ih_l2" id="9" />
+      <edge source="lstm.weight_ih_l2" target="lstm.weight_hh_l2" id="10" />
+      <edge source="lstm.weight_hh_l2" target="lstm.bias_ih_l2" id="11" />
+      <edge source="lstm.bias_ih_l2" target="lstm.bias_hh_l2" id="12" />
+      <edge source="lstm.bias_hh_l2" target="lstm.weight_ih_l3" id="13" />
+      <edge source="lstm.weight_ih_l3" target="lstm.weight_hh_l3" id="14" />
+      <edge source="lstm.weight_hh_l3" target="lstm.bias_ih_l3" id="15" />
+      <edge source="lstm.bias_ih_l3" target="lstm.bias_hh_l3" id="16" />
+      <edge source="lstm.bias_hh_l3" target="fc.0.weight" id="17" />
+      <edge source="fc.0.weight" target="fc.0.bias" id="18" />
+      <edge source="fc.0.bias" target="fc.3.weight" id="19" />
+      <edge source="fc.3.weight" target="fc.3.bias" id="20" />
+    </edges>
+  </graph>
+</gexf>

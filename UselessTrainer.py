@@ -74,7 +74,7 @@ dropout = 0.3
 learning_rate = 0.001
 batch_size = 256
 num_epochs = 64
-grid_size = 250  # Time Complexity -> O(N^2 * num_batches)
+grid_size = 100  # Time Complexity -> O(N^2 * num_batches)
 
 # Model, loss, and optimizer
 model = TextSentimentModel(input_dim, hidden_dim, output_dim, n_layers, dropout)
