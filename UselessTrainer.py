@@ -20,25 +20,25 @@ from torchviz import make_dot
 
 # Define the PyTorch model
 class TextSentimentModel(nn.Module):
-    def __init__(self, input_dim, hidden_dim, output_dim, n_layers, dropout):
+    def __init__(self, input_dim_x, hidden_dim_x, output_dim_x, num_layers, dropout_x):
         super(TextSentimentModel, self).__init__()
-        self.embedding = nn.Linear(input_dim, hidden_dim)
-        self.lstm = nn.LSTM(hidden_dim, hidden_dim, n_layers, batch_first=True, dropout=dropout)
+        self.embedding = nn.Linear(input_dim_x, hidden_dim_x)
+        self.lstm = nn.LSTM(hidden_dim_x, hidden_dim_x, num_layers, batch_first=True, dropout=dropout_x)
         self.fc = nn.Sequential(
-            nn.Linear(hidden_dim, hidden_dim // 2),
+            nn.Linear(hidden_dim_x, hidden_dim_x // 2),
             nn.ReLU(),
-            nn.Dropout(dropout),
-            nn.Linear(hidden_dim // 2, output_dim),
+            nn.Dropout(dropout_x),
+            nn.Linear(hidden_dim_x // 2, output_dim_x),
         )
 
-    def forward(self, x):
+    def forward(self, x_var):
         # Reshape input to (batch_size, sequence_length, input_dim)
-        x = x.unsqueeze(1)  # Add a sequence dimension of size 1
-        x = self.embedding(x)
-        x, _ = self.lstm(x)
-        x = x[:, -1, :]  # Take the output of the last LSTM cell
-        x = self.fc(x)
-        return x
+        x_var = x_var.unsqueeze(1)  # Add a sequence dimension of size 1
+        x_var = self.embedding(x_var)
+        x_var, _ = self.lstm(x_var)
+        x_var = x_var[:, -1, :]  # Take the output of the last LSTM cell
+        x_var = self.fc(x_var)
+        return x_var
 
 
 # Prepare dataset
@@ -74,7 +74,7 @@ dropout = 0.3
 learning_rate = 0.001
 batch_size = 256
 num_epochs = 64
-grid_size = 250  # Time Complexity -> O(N^2 * num_batches)
+grid_size = 100  # Time Complexity -> O(N^2 * num_batches)
 
 # Model, loss, and optimizer
 model = TextSentimentModel(input_dim, hidden_dim, output_dim, n_layers, dropout)
@@ -111,8 +111,8 @@ for epoch in range(num_epochs):
     with torch.no_grad():
         test_outputs = model(X_test_tensor)
         test_loss = criterion(test_outputs, y_test_tensor).item()
-        test_preds = torch.argmax(test_outputs, dim=1)
-        test_acc = (test_preds == y_test_tensor).float().mean().item()
+        test_predictions = torch.argmax(test_outputs, dim=1)
+        test_acc = (test_predictions == y_test_tensor).float().mean().item()
 
     test_losses.append(test_loss)
     test_accuracies.append(test_acc)
